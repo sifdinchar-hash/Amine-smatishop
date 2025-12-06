@@ -1,0 +1,171 @@
+:root {
+  --accent: #0f766e;
+  --muted: #666;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Arabic', Tahoma;
+  direction: rtl;
+  margin: 0;
+  background: #f7f7f8;
+  color: #111;
+}
+
+header {
+  background: linear-gradient(90deg, var(--accent), #065f5a);
+  color: #fff;
+  padding: 18px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 118, 110, 0.08);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.card .body {
+  padding: 12px;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.search {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  width: 100%;
+  max-width: 360px;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  background: #ef4444;
+  color: #fff;
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* cart drawer */
+.drawer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.drawer .panel {
+  width: 360px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(2, 6, 23, 0.2);
+  pointer-events: auto;
+  padding: 16px;
+  transform: translateX(100%);
+  transition: transform 0.26s;
+}
+
+.drawer.open .panel {
+  transform: translateX(0);
+}
+
+.cart-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px dashed #eee;
+  padding: 8px 0;
+}
+
+.cart-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .card img {
+    height: 180px;
+  }
+  .drawer .panel {
+    width: 100%;
+  }
+}
